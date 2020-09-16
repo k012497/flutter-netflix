@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:netflixclone/model/model_cheese.dart';
 
 class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<Cheese> cheese = [
+    Cheese.fromMap({
+      'category': 'soft',
+      'name': 'camenbert',
+      'image': 'soft_comenber.jpeg',
+      'isLiked': false
+    })
+  ];
+
   @override
   void initState() {
     super.initState();
