@@ -11,7 +11,29 @@ class _HomeScreenState extends State <HomeScreen> {
     Cheese.fromMap({
       'category': 'soft',
       'name': 'camenbert',
-      'image': 'soft_comenber.jpeg',
+      'image': 'soft_camenbert.jpeg',
+      'keyword': '프랑스',
+      'isLiked': false
+    }),
+    Cheese.fromMap({
+      'category': 'soft',
+      'name': 'camenbert',
+      'image': 'soft_camenbert.jpeg',
+      'keyword': '프랑스',
+      'isLiked': false
+    }),
+    Cheese.fromMap({
+      'category': 'soft',
+      'name': 'camenbert',
+      'image': 'soft_camenbert.jpeg',
+      'keyword': '프랑스',
+      'isLiked': false
+    }),
+    Cheese.fromMap({
+      'category': 'soft',
+      'name': 'camenbert',
+      'image': 'soft_camenbert.jpeg',
+      'keyword': '프랑스',
       'isLiked': false
     })
   ];
