@@ -3,7 +3,7 @@ import 'package:netflixclone/model/model_cheese.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class CarouselImage extends StatefulWidget {
-  final List <Cheese> cheese;
+  final List<Cheese> cheese;
   CarouselImage({
     this.cheese
   }); // ???? 생성자
@@ -50,9 +50,80 @@ class _CarouselImageState extends State < CarouselImage > {
              )
             
           ),
-          Container(child: Text(_currentKeyword),)
+          Container(
+            padding: EdgeInsets.fromLTRB(0, 10, 0, 3),
+            child: Text(_currentKeyword, style: TextStyle(fontSize: 11),),
+          ),
+          Container(child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              Container(
+                child: Column(
+                  children: <Widget>[
+                    likes[_currentPage]
+                    ? IconButton(icon: Icon(Icons.check), onPressed: () {},)
+                    : IconButton(icon: Icon(Icons.favorite), onPressed: () {},),
+                    Text('아이 러빗', style: TextStyle(fontSize: 10),)
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(right: 30),
+                child: FlatButton(
+                  color: Colors.white, 
+                  onPressed: () {}, 
+                  child: Row(
+                    children: <Widget>[
+                      Icon(Icons.kitchen, color: Colors.black,),
+                      Padding(padding: EdgeInsets.all(3),),
+                      Text('보기', style: TextStyle(color: Colors.black),)
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.only(right: 10),
+                child: Column(
+                  children: <Widget>[
+                    IconButton(
+                      icon: Icon(Icons.info),
+                      onPressed: () {},
+                    ),
+                    Text(
+                      '정보',
+                      style: TextStyle(fontSize: 11),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),),
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: makeIndicator(likes, _currentPage),
+            ),
+          )
         ]
       ),
     );
   }
+}
+
+List<Widget> makeIndicator(List list, int _currentPage) {
+  List<Widget> results = [];
+  for (var i = 0; i < list.length; i++) {
+    results.add(Container(
+      width: 8,
+      height: 8,
+      margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+      decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: _currentPage == i
+              ? Color.fromRGBO(255, 255, 255, 0.9)
+              : Color.fromRGBO(255, 255, 255, 0.4)),
+    ));
+  }
+
+  return results;
 }
