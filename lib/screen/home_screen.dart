@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:netflixclone/model/model_cheese.dart';
 import 'package:netflixclone/widget/carousel_slider.dart';
+import 'package:netflixclone/widget/circle_slider.dart';
 
 class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
@@ -51,7 +52,8 @@ class _HomeScreenState extends State <HomeScreen> {
           CarouselImage(cheese: cheese),
           TopBar(),
         ]
-      )
+      ),
+      CircleSlider(cheese: cheese),
     ]);
   }
 }
