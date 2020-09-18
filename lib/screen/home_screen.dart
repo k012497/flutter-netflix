@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:netflixclone/model/model_cheese.dart';
+import 'package:netflixclone/widget/box_slider.dart';
 import 'package:netflixclone/widget/carousel_slider.dart';
 import 'package:netflixclone/widget/circle_slider.dart';
 
@@ -54,6 +55,7 @@ class _HomeScreenState extends State <HomeScreen> {
         ]
       ),
       CircleSlider(cheese: cheese),
+      BoxSlider(cheese: cheese),
     ]);
   }
 }
